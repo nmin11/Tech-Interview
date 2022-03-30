@@ -8,5 +8,5 @@ header를 압축하여 중복을 제거한 뒤 보내기 때문에 훨씬 더 �
 그리고 Protocol Buffer는 Google 사에서 개발한 데이터 직렬화 기법으로,  
 기존의 text 기반의 JSON에 비해 데이터 표현을 byte 단위로 변환하는 작업에서 훨씬 더 적은 byte를 사용하도록 해줍니다.
 
-- Reference 1 : [gPRC란?]](https://chacha95.github.io/2020-06-15-gRPC1/)
+- Reference 1 : [gPRC란?](https://chacha95.github.io/2020-06-15-gRPC1/)
 - Reference 2 : [시대의 흐름, gRPC 깊게 파고들기](https://medium.com/naver-cloud-platform/nbp-%EA%B8%B0%EC%88%A0-%EA%B2%BD%ED%97%98-%EC%8B%9C%EB%8C%80%EC%9D%98-%ED%9D%90%EB%A6%84-grpc-%EA%B9%8A%EA%B2%8C-%ED%8C%8C%EA%B3%A0%EB%93%A4%EA%B8%B0-1-39e97cb3460)
