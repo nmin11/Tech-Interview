@@ -92,3 +92,6 @@ RESTful의 목적은 이해하기 쉽고 사용하기 쉬운 REST API를 만드�
 DB를 사용하거나 다양한 로직 처리가 필요한 동적 컨텐츠를 제공해줍니다.  
 이렇게 정적 컨텐츠를 다루는 Web Server와 동적 컨텐츠를 다루는 WAS를 따로 두고 함께 사용하면  
 상호 간에 서버 부하를 줄여줄 수 있습니다.
+
+- Reference 1 : [Web Server와 WAS의 차이와 웹 서비스 구조](https://gmlwjd9405.github.io/2018/10/27/webserver-vs-was.html)
+- Reference 2 : [웹 서버와 WAS의 차이를 쉽게 알아보자](https://codechasseur.tistory.com/25)
