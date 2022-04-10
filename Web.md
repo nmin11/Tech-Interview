@@ -107,3 +107,34 @@ NAT는 사설 IP를 공인 IP 주소로 변경해주는 통신망의 주소 변�
 Tunneling은 통신하는 통로를 만들고 데이터를 캡슐화해서 통로를 통한 경로로만 패킷을 구별해서 캡슐을 해제할 수 있도록 합니다.  
 그리고 DSR은 로드 밸런서 사용 시 서버에서 클라이언트로 되돌아가는 경우 목적지 주소를  
 스위치의 IP 주소가 아닌 클라이언트의 IP 주소로 전달해서 네트워크 스위치를 거치지 않고 바로 클라이언트를 찾아가는 개념입니다.
+
+## OAuth 2.0에 대해 설명해주세요
+
+로그인 및 개인 정보 관리 책임을 서드파티 애플리케이션에게 위임할 수 있는 서비스입니다.  
+OAuth 2.0의 요소들은 어떤 서드파티 앱을 쓰냐에 따라 차이가 있을 수 있는데,  
+기본적으로는 Client, Resource Owner, Resource Server, Authorization Server로 이루어져 있습니다.  
+Client는 서드파티 로그인을 구현할 본인의 애플리케이션 서버이고,  
+Resource Owner는 서드파티 앱에 이미 가입된 유저이면서 동시에 Client의 서비스를 이용하려는 유저입니다.  
+그리고 Resource Server는 유저 정보를 갖고 있는 서드파드 애플리케이션 서버이며,  
+Client는 토큰을 이 서버로 넘겨서 개인 정보를 응답받을 수 있습니다.  
+Authorization Server는 권한을 부여해주는 서버로,  
+유저는 이 서버로 아이디 및 비밀번호를 넘겨서 Authorization Code를 받을 수 있습니다.  
+그리고 Client는 이 서버로 Authorization Code를 넘겨서 토큰을 발급받을 수 있습니다.
+
+(이미지 첨부)
+
+(가능하면 보드를 이용하거나 노트를 꺼내서 그림으로 설명하겠다고 할 것)
+
+OAuth 2.0의 작동 방식은 앞서 말씀드렸던 4개의 요소들을 토대로 이루어집니다.  
+우선 Resource Owner, 즉 유저가 저희 애플리케이션에서 서드파티 앱 연동을 시도하면 서버에서 Client ID와 Redirect URI를 줍니다.  
+이 2가지를 가지고 Authorzation Server, 즉 서드파티 앱 서버에 로그인 페이지를 요청하고,  
+Authorization Server는 로그인 페이지를 제공해줍니다.  
+그래서 유저는 로그인 페이지에서 로그인을 하면 Authorization Server는 Authorization Code를 발급해줍니다.  
+유저는 이렇게 받은 코드를 다시 Client, 즉 저희 앱 서버에 Redirect URI를 통해서 전달해줍니다.  
+그러면 Client는 다시 Authorization Server에 Access Token을 요청하고 토큰을 응답 받습니다.  
+토큰까지 발급 받고 나면 유저는 인증 및 로그인에 성공하게 되고,  
+이후 서비스를 요청할 때마다 Access Token을 통해 Authorization Code를 검증하면서 서비스를 제공할 수 있게 됩니다.  
+그리고 Access Token을 발급 받을 때 보통 Refresh Token을 함께 발급받아서  
+Access Token의 유효 시간이 끝나면 Refresh Token을 통해 Access Token을 재발급받습니다.
+
+- Reference : [OAuth 2.0 개념 정리](https://hwannny.tistory.com/92)
