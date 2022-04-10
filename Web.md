@@ -121,7 +121,7 @@ Authorization Server는 권한을 부여해주는 서버로,
 유저는 이 서버로 아이디 및 비밀번호를 넘겨서 Authorization Code를 받을 수 있습니다.  
 그리고 Client는 이 서버로 Authorization Code를 넘겨서 토큰을 발급받을 수 있습니다.
 
-(이미지 첨부)
+![PAYCO OAuth 2.0](https://user-images.githubusercontent.com/75058239/162602614-491563bc-ae4d-4c90-875d-e6e16c8681b6.png)
 
 (가능하면 보드를 이용하거나 노트를 꺼내서 그림으로 설명하겠다고 할 것)
 
