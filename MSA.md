@@ -19,3 +19,29 @@ header를 압축하여 중복을 제거한 뒤 보내기 때문에 훨씬 더 �
 
 - Reference 1 : [gPRC란?](https://chacha95.github.io/2020-06-15-gRPC1/)
 - Reference 2 : [시대의 흐름, gRPC 깊게 파고들기](https://medium.com/naver-cloud-platform/nbp-%EA%B8%B0%EC%88%A0-%EA%B2%BD%ED%97%98-%EC%8B%9C%EB%8C%80%EC%9D%98-%ED%9D%90%EB%A6%84-grpc-%EA%B9%8A%EA%B2%8C-%ED%8C%8C%EA%B3%A0%EB%93%A4%EA%B8%B0-1-39e97cb3460)
+
+<br>
+
+## RabbitMQ와 Kafka의 차이점이 뭔가요?
+
+우선 기본 개념적인 차이로, RabbitMQ는 전통적인 메시지 브로커이지만 Kafka는 최신 이벤트 스트리밍 플랫폼입니다.  
+그래서 RabbitMQ의 경우, Event Producer가 메시지를 발행하면 메시지 브로커인 RabbitMQ는  
+이 메시지를 어떤 큐에 보낼지 결정해서 exchange를 하고,  
+이렇게 큐에 들어간 메시지는 Event Consumer가 가져가게 됩니다.  
+여기서 한 가지 중요한 점은 컨슈머가 메시지를 가져가게 되면 큐에는 더이상 메시지가 남지 않고  
+사라지게 되어서 이벤트를 다시 재생하기가 어렵습니다.  
+따라서 RabbitMQ는 소비자와 메시지 브로커의 결합력이 높아지게 되어  
+추후 트래픽이 증가해도 확장에 용이하지 못하다는 단점이 있습니다.
+
+<br>
+
+반면에 Kafka는 이벤트 스트리밍 플랫폼으로서, 메시지 브로커와 다르게 topic이라는 것이  
+event streamer에 저장됩니다.  
+Event Producer가 이벤트를 생성하면 토픽이라고 불리는 이벤트 로그를 streamer에 순서대로 기록하게 됩니다.  
+그 이후에 해당 토픽을 subscribe한 컨슈머에게 전달하게 됩니다.  
+또한 이 토픽을 컨슈머가 가져간 이후에도 이벤트 스트림에서 계속해서 토픽을 가지고 있기 때문에  
+이벤트를 다시 재생할 수도 있습니다.  
+따라서 Kafka는 RabbitMQ에 비해 더 유연하고 느슨한 결합을 가지고 있으므로,  
+격리와 확장이 비교적 더 쉽습니다.
+
+※ Reference : [RabbitMQ와 Kafka의 차이? 메시지 브로커와 이벤트 스트리밍 플랫폼](https://programming-workspace.tistory.com/69)
