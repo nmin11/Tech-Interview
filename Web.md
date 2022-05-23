@@ -135,7 +135,7 @@ DB를 사용하거나 다양한 로직 처리가 필요한 동적 컨텐츠를 �
 
 로그인 및 개인 정보 관리 책임을 서드파티 애플리케이션에게 위임할 수 있는 서비스입니다.  
 OAuth 2.0의 요소들은 어떤 서드파티 앱을 쓰냐에 따라 차이가 있을 수 있는데,  
-기본적으로는 Client, Resource Owner, Resource Server, Authorization Server로 이루어져 있습니다.  
+기본적으로는 Resource Owner, Client, Authorization Server, Resource Server로 이루어져 있습니다.  
 Client는 서드파티 로그인을 구현할 본인의 애플리케이션 서버이고,  
 Resource Owner는 서드파티 앱에 이미 가입된 유저이면서 동시에 Client의 서비스를 이용하려는 유저입니다.  
 그리고 Resource Server는 유저 정보를 갖고 있는 서드파드 애플리케이션 서버이며,  
