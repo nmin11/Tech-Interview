@@ -71,3 +71,5 @@ Cookie의 경우에는 httpOnly 옵션을 사용할 수 있기 때문에 악의�
 그리고 이러한 방식으로 XSS 공격에 뚫리게 되면 쿠키의 httpOnly도 안전하지 않게 됩니다.  
 또한 쿠키는 http request에 자동으로 실리기 때문에 해커가 url만 알면  
 request를 위조하기에도 쉽습니다.
+
+- Reference : [JWT는 어디에 저장해야 할까?](https://velog.io/@0307kwon/JWT%EB%8A%94-%EC%96%B4%EB%94%94%EC%97%90-%EC%A0%80%EC%9E%A5%ED%95%B4%EC%95%BC%ED%95%A0%EA%B9%8C-localStorage-vs-cookie)
