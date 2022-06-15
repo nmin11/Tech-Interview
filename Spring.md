@@ -27,3 +27,17 @@ Dependency Injection, 즉 의존 관계 주입은 어떤 객체가 사용하는 
 코드의 중복을 피할 수 있게 해주기 때문에 유지 보수가 더욱 용이해집니다.  
 그리고 IoC 컨테이너에서 스프링은 객체를 Bean으로 관리하여  
 객체의 생성과 소멸과 관련된 작업을 자동으로 수행해주기 때문에 편리합니다.
+
+<br>
+
+## @Autowired에 대해서 설명해주세요
+
+Autowired에 대해서 이해하기 위해서는 우선 Dependency Injection에 대한 얘기를 해야 합니다.  
+DI는 클래스 간의 의존관계를 스프링 컨테이너가 자동으로 연결해주는 것입니다.  
+이러한 DI의 방법으로는 Setter Injection, Construction Injection, Method Injection, 이렇게 3개가 있습니다.  
+그리고 @Autowired는 이 3가지의 DI를 할 수 있게 해주는 어노테이션입니다.  
+스프링에서는 Bean 인스턴스가 생성된 이후, @Autowired가 설정된 메소드를 자동으로 호출해서 인스턴스를 주입합니다.  
+다시 말해, 특정 변수 및 메소드에 스프링이 관리하는 Bean을 자동으로 주입해주는 것입니다.  
+또한 @Type이나 @Qualifier 어노테이션을 함께 사용할 수 있습니다.  
+주로 같이 사용되는 것은 @Type이며, 이는 @Autowired가 타입을 찾아서 주입해주는 방식입니다.  
+동일한 Bean 타입의 객체가 있을 경우에 @Qualifier를 함께 사용해서 구분해줘야 합니다.
