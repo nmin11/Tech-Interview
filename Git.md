@@ -17,3 +17,16 @@ reset으로는 remote repository에 이미 push되어 있던 commit들을 조작
 더 권장하고 있습니다.
 
 ※ Reference : [Reset, Revert 차이 간략정리](https://youngest-programming.tistory.com/220)
+
+<br>
+
+## Git을 활용한 협업 과정 중 충돌이 발생하면 어떻게 해결하나요?
+
+충돌을 해결하기 위한 방법에는 여러 가지 방법이 있을 수 있습니다.  
+local main 브랜치로 pull 받아서 충돌을 직접 해결한 후 한 번의 merge로 해결할 수도 있을 것이고,  
+아니면 remote main의 최신 상태를 base로 해서 내 작업 브랜치를 rebase하는 방법을 사용할 수도 있을 것입니다.  
+저 같은 경우에는 rebase를 활용해서 충돌을 해결하고자 하는 편입니다.  
+많은 사람이 협업하는 경우에 커밋 이력을 좀 더 깔끔하게 관리할 수 있으며,  
+마치 remote의 최신 상태에서 내 작업이 이어지는 식으로 정리되기 때문에 훨씬 더 보기 편하다고 생각합니다.
+
+※ Reference : [conflict 시 해결하는 방법](https://velog.io/@ha0kim/GIT-conflict-%EC%8B%9C-%ED%95%B4%EA%B2%B0%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95)
